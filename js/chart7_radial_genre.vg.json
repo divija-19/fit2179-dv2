@@ -12,7 +12,7 @@
       "labelFontSize": 12, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/genres.json" },
+  "data": { "url": "data/genres.json" },
   "mark": {
     "type": "arc",
     "innerRadius": 55,
