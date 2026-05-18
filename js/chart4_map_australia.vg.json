@@ -20,7 +20,7 @@
   "layer": [
     {
       "data": {
-        "url": "../js/ne_110m.json",
+        "url": "js/ne_110m.json",
         "format": { "type": "topojson", "feature": "countries" }
       },
       "mark": {
@@ -32,7 +32,7 @@
     },
     {
       "data": {
-        "url": "../js/ne_110m.json",
+        "url": "js/ne_110m.json",
         "format": { "type": "topojson", "feature": "countries" }
       },
       "transform": [ { "filter": "datum.id === 36" } ],
@@ -44,7 +44,7 @@
       }
     },
     {
-      "data": { "url": "../data/state_data.json" },
+      "data": { "url": "data/state_data.json" },
       "mark": { "type": "circle", "opacity": 0.85 },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
@@ -78,7 +78,7 @@
       }
     },
     {
-      "data": { "url": "../data/state_data.json" },
+      "data": { "url": "data/state_data.json" },
       "mark": {
         "type": "text",
         "fontSize": 11,
@@ -99,7 +99,7 @@
       }
     },
     {
-      "data": { "url": "../data/festival_locations.json" },
+      "data": { "url": "data/festival_locations.json" },
       "mark": { "type": "point", "shape": "diamond", "size": 60, "opacity": 0.85 },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
