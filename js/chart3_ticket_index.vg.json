@@ -13,7 +13,7 @@
       "labelFontSize": 12, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/lpa_annual.json" },
+  "data": { "url": "data/lpa_annual.json" },
   "resolve": { "scale": { "y": "independent" } },
   "layer": [
     {
