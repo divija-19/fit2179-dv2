@@ -18,7 +18,7 @@
       "labelFontSize": 12, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/lpa_annual.json" },
+  "data": { "url": "data/lpa_annual.json" },
   "transform": [
     { "fold": ["contemporary_revenue_b", "other_revenue_b"], "as": ["category_key", "value"] },
     {
