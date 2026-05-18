@@ -18,7 +18,7 @@
       "labelFontSize": 12, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/age_demographics.json" },
+  "data": { "url": "data/age_demographics.json" },
   "params": [{
     "name": "period_hl",
     "select": { "type": "point", "fields": ["period"] },
