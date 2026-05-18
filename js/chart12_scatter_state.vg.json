@@ -13,7 +13,7 @@
       "labelFontSize": 12, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/state_data.json" },
+  "data": { "url": "data/state_data.json" },
   "layer": [
     {
       "mark": { "type": "point", "filled": true, "opacity": 0.85 },
