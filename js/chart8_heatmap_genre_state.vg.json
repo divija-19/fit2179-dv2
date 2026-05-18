@@ -18,7 +18,7 @@
       "labelFontSize": 11, "titleFontSize": 11
     }
   },
-  "data": { "url": "../data/genre_by_state.json" },
+  "data": { "url": "data/genre_by_state.json" },
   "layer": [
     {
       "mark": { "type": "rect", "cornerRadius": 2 },
