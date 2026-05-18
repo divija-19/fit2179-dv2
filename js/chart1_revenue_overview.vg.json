@@ -20,7 +20,7 @@
   "vconcat": [
     {
       "height": 240,
-      "data": { "url": "../data/lpa_annual.json" },
+      "data": { "url": "data/lpa_annual.json" },
       "layer": [
         {
           "mark": {
@@ -92,7 +92,7 @@
     },
     {
       "height": 55,
-      "data": { "url": "../data/lpa_annual.json" },
+      "data": { "url": "data/lpa_annual.json" },
       "params": [{ "name": "brush", "select": { "type": "interval", "encodings": ["x"] } }],
       "mark": { "type": "area", "interpolate": "monotone", "color": "#FFD166", "opacity": 0.4 },
       "encoding": {
