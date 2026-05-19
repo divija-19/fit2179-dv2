@@ -7,39 +7,64 @@
     "background": "transparent",
     "view": { "stroke": "transparent" },
     "axis": {
-      "domainColor": "#282822", "gridColor": "#1e1e18", "tickColor": "#282822",
-      "labelColor": "#7a7570", "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
-      "labelFontSize": 11, "titleFontSize": 11
+      "domainColor": "#282822",
+      "gridColor": "#1e1e18",
+      "tickColor": "#282822",
+      "labelColor": "#7a7570",
+      "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif",
+      "titleFont": "Space Mono, monospace",
+      "labelFontSize": 11,
+      "titleFontSize": 11
     },
     "legend": {
-      "labelColor": "#7a7570", "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
-      "labelFontSize": 12, "titleFontSize": 11
+      "labelColor": "#7a7570",
+      "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif",
+      "titleFont": "Space Mono, monospace",
+      "labelFontSize": 12,
+      "titleFontSize": 11
     }
   },
   "data": { "url": "data/challenges_stacked.json" },
-  "params": [{
-    "name": "min_sev",
-    "value": 0,
-    "bind": { "input": "range", "min": 0, "max": 40, "step": 5, "name": "Minimum Severe Impact %:  " }
-  }],
-  "transform": [{ "filter": "datum.severe_pct >= min_sev" }],
+  "params": [
+    {
+      "name": "min_sev",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "name": "Minimum Severe Impact %: "
+      }
+    }
+  ],
+  "transform": [
+    { "filter": "datum.severe_pct >= min_sev" }
+  ],
   "mark": { "type": "bar", "cornerRadiusTopRight": 3, "cornerRadiusBottomRight": 3 },
   "encoding": {
     "y": {
-      "field": "challenge", "type": "nominal",
+      "field": "challenge",
+      "type": "nominal",
       "sort": { "field": "severe_pct", "order": "descending" },
       "axis": { "title": null, "labelFontSize": 11, "labelLimit": 240 }
     },
     "x": {
-      "field": "pct", "type": "quantitative",
+      "field": "pct",
+      "type": "quantitative",
+      "stack": "zero",
       "axis": { "title": "Percentage of festival organisers impacted (%)" },
       "scale": { "domain": [0, 90] }
     },
     "color": {
-      "field": "impact_type", "type": "nominal",
-      "scale": { "domain": ["Severe impact", "Major impact"], "range": ["#EF233C", "#5a1e28"] },
+      "field": "impact_type",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Severe impact", "Major impact"],
+        "range": ["#EF233C", "#5a1e28"]
+      },
       "legend": { "title": "Impact Level", "orient": "bottom-right" }
     },
     "order": { "field": "impact_type", "sort": "descending" },
