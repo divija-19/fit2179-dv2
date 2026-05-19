@@ -31,7 +31,7 @@
     {
       "height": 240,
       "data": {
-        "url": "../data/lpa_annual.json"
+        "url": "data/lpa_annual.json"
       },
       "layer": [
         {
