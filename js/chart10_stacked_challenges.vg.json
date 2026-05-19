@@ -3,69 +3,45 @@
   "description": "Stacked horizontal bar showing severe and major impact of challenges on festival organisers. Slider filters by minimum severe impact. Source: Creative Australia Soundcheck 2024.",
   "width": "container",
   "height": 310,
-  "data": {
-    "values": [
-      { "challenge": "Rising operational costs", "severe_pct": 47, "major_pct": 31, "impact_type": "Severe impact", "pct": 47 },
-      { "challenge": "Rising operational costs", "severe_pct": 47, "major_pct": 31, "impact_type": "Major impact", "pct": 31 },
-      { "challenge": "Lack of funding & grants", "severe_pct": 39, "major_pct": 28, "impact_type": "Severe impact", "pct": 39 },
-      { "challenge": "Lack of funding & grants", "severe_pct": 39, "major_pct": 28, "impact_type": "Major impact", "pct": 28 },
-      { "challenge": "Insurance costs", "severe_pct": 31, "major_pct": 24, "impact_type": "Severe impact", "pct": 31 },
-      { "challenge": "Insurance costs", "severe_pct": 31, "major_pct": 24, "impact_type": "Major impact", "pct": 24 },
-      { "challenge": "Extreme weather events", "severe_pct": 22, "major_pct": 29, "impact_type": "Severe impact", "pct": 22 },
-      { "challenge": "Extreme weather events", "severe_pct": 22, "major_pct": 29, "impact_type": "Major impact", "pct": 29 },
-      { "challenge": "Late ticket buying", "severe_pct": 20, "major_pct": 35, "impact_type": "Severe impact", "pct": 20 },
-      { "challenge": "Late ticket buying", "severe_pct": 20, "major_pct": 35, "impact_type": "Major impact", "pct": 35 },
-      { "challenge": "Police & security costs", "severe_pct": 18, "major_pct": 26, "impact_type": "Severe impact", "pct": 18 },
-      { "challenge": "Police & security costs", "severe_pct": 18, "major_pct": 26, "impact_type": "Major impact", "pct": 26 },
-      { "challenge": "Council regulations", "severe_pct": 15, "major_pct": 30, "impact_type": "Severe impact", "pct": 15 },
-      { "challenge": "Council regulations", "severe_pct": 15, "major_pct": 30, "impact_type": "Major impact", "pct": 30 }
-    ]
-  },
-  "params": [
-    {
-      "name": "min_sev",
-      "value": 0,
-      "bind": {
-        "input": "range",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "name": "Minimum Severe Impact %: "
-      }
+  "config": {
+    "background": "transparent",
+    "view": { "stroke": "transparent" },
+    "axis": {
+      "domainColor": "#282822", "gridColor": "#1e1e18", "tickColor": "#282822",
+      "labelColor": "#7a7570", "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
+      "labelFontSize": 11, "titleFontSize": 11
+    },
+    "legend": {
+      "labelColor": "#7a7570", "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
+      "labelFontSize": 12, "titleFontSize": 11
     }
-  ],
-  "transform": [
-    { "filter": "datum.severe_pct >= min_sev" }
-  ],
-  "mark": {
-    "type": "bar",
-    "cornerRadiusTopRight": 3,
-    "cornerRadiusBottomRight": 3
   },
+  "data": { "url": "../data/challenges_stacked.json" },
+  "params": [{
+    "name": "min_sev",
+    "value": 0,
+    "bind": { "input": "range", "min": 0, "max": 40, "step": 5, "name": "Minimum Severe Impact %:  " }
+  }],
+  "transform": [{ "filter": "datum.severe_pct >= min_sev" }],
+  "mark": { "type": "bar", "cornerRadiusTopRight": 3, "cornerRadiusBottomRight": 3 },
   "encoding": {
     "y": {
-      "field": "challenge",
-      "type": "nominal",
+      "field": "challenge", "type": "nominal",
       "sort": { "field": "severe_pct", "order": "descending" },
       "axis": { "title": null, "labelFontSize": 11, "labelLimit": 240 }
     },
     "x": {
-      "field": "pct",
-      "type": "quantitative",
-      "stack": null,
-      "scale": { "domain": [0, 50] },
-      "axis": { "title": "Percentage of festival organisers impacted (%)" }
+      "field": "pct", "type": "quantitative",
+      "axis": { "title": "Percentage of festival organisers impacted (%)" },
+      "scale": { "domain": [0, 90] }
     },
     "color": {
-      "field": "impact_type",
-      "type": "nominal",
-      "scale": {
-        "domain": ["Severe impact", "Major impact"],
-        "range": ["#EF233C", "#5a1e28"]
-      },
+      "field": "impact_type", "type": "nominal",
+      "scale": { "domain": ["Severe impact", "Major impact"], "range": ["#EF233C", "#5a1e28"] },
       "legend": { "title": "Impact Level", "orient": "bottom-right" }
     },
-    "detail": { "field": "impact_type" },
     "order": { "field": "impact_type", "sort": "descending" },
     "tooltip": [
       { "field": "challenge", "title": "Challenge" },
