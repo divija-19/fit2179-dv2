@@ -24,7 +24,7 @@
     "value": 0,
     "bind": { "input": "range", "min": 0, "max": 40, "step": 5, "name": "Minimum Severe Impact %:  " }
   }],
-  "transform": [{ "filter": { "expr": "datum.severe_pct >= min_sev" } }],
+  "transform": [{ "filter": "datum.severe_pct >= min_sev" }],
   "mark": { "type": "bar", "cornerRadiusTopRight": 3, "cornerRadiusBottomRight": 3 },
   "encoding": {
     "y": {
@@ -34,7 +34,6 @@
     },
     "x": {
       "field": "pct", "type": "quantitative",
-      "stack": true,
       "axis": { "title": "Percentage of festival organisers impacted (%)" },
       "scale": { "domain": [0, 90] }
     },
