@@ -12,16 +12,16 @@
       "tickColor": "#282822",
       "labelColor": "#7a7570",
       "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif",
-      "titleFont": "Space Mono, monospace",
+      "labelFont": "Trebuchet MS",
+      "titleFont": "Trebuchet MS",
       "labelFontSize": 11,
       "titleFontSize": 11
     },
     "legend": {
       "labelColor": "#7a7570",
       "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif",
-      "titleFont": "Space Mono, monospace",
+      "labelFont": "Trebuchet MS",
+      "titleFont": "Trebuchet MS",
       "labelFontSize": 12,
       "titleFontSize": 11
     }
