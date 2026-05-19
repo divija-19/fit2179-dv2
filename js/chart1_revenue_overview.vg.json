@@ -4,105 +4,271 @@
   "width": "container",
   "config": {
     "background": "transparent",
-    "view": { "stroke": "transparent" },
+    "view": {
+      "stroke": "transparent"
+    },
     "axis": {
-      "domainColor": "#282822", "gridColor": "#1e1e18", "tickColor": "#282822",
-      "labelColor": "#7a7570", "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
-      "labelFontSize": 12, "titleFontSize": 11
+      "domainColor": "#282822",
+      "gridColor": "#1e1e18",
+      "tickColor": "#282822",
+      "labelColor": "#7a7570",
+      "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif",
+      "titleFont": "Space Mono, monospace",
+      "labelFontSize": 12,
+      "titleFontSize": 11
     },
     "legend": {
-      "labelColor": "#7a7570", "titleColor": "#7a7570",
-      "labelFont": "Inter, sans-serif", "titleFont": "Space Mono, monospace",
-      "labelFontSize": 12, "titleFontSize": 11
+      "labelColor": "#7a7570",
+      "titleColor": "#7a7570",
+      "labelFont": "Inter, sans-serif",
+      "titleFont": "Space Mono, monospace",
+      "labelFontSize": 12,
+      "titleFontSize": 11
     }
   },
   "vconcat": [
     {
       "height": 240,
-      "data": { "url": "data/lpa_annual.json" },
+      "data": {
+        "url": "../data/lpa_annual.json"
+      },
       "layer": [
         {
           "mark": {
             "type": "area",
             "interpolate": "monotone",
-            "line": { "color": "#FFD166", "strokeWidth": 2.5 },
+            "line": {
+              "color": "#FFD166",
+              "strokeWidth": 2.5
+            },
             "color": {
-              "gradient": "linear", "x1": 0, "y1": 0, "x2": 0, "y2": 1,
+              "gradient": "linear",
+              "x1": 0,
+              "y1": 0,
+              "x2": 0,
+              "y2": 1,
               "stops": [
-                { "offset": 0, "color": "#FFD166", "opacity": 0.25 },
-                { "offset": 1, "color": "#FFD166", "opacity": 0 }
+                {
+                  "offset": 0,
+                  "color": "#FFD166",
+                  "opacity": 0.25
+                },
+                {
+                  "offset": 1,
+                  "color": "#FFD166",
+                  "opacity": 0
+                }
               ]
             }
           },
           "encoding": {
             "x": {
-              "field": "year", "type": "quantitative",
-              "scale": { "domain": { "param": "brush" } },
-              "axis": { "format": "d", "title": null, "tickCount": 6, "labelFontSize": 12 }
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": {
+                  "param": "brush"
+                }
+              },
+              "axis": {
+                "format": "d",
+                "title": null,
+                "tickCount": 6,
+                "labelFontSize": 12
+              }
             },
             "y": {
-              "field": "revenue_b", "type": "quantitative",
-              "axis": { "title": "Revenue (AUD Billion)", "format": "$,.1f" }
+              "field": "revenue_b",
+              "type": "quantitative",
+              "axis": {
+                "title": "Revenue (AUD Billion)",
+                "format": "$,.1f"
+              }
             },
             "tooltip": [
-              { "field": "year", "title": "Year", "format": "d" },
-              { "field": "revenue_b", "title": "Revenue ($B)", "format": "$.2f" },
-              { "field": "attendance_m", "title": "Attendances (M)", "format": ".1f" },
-              { "field": "contemporary_share_pct", "title": "Contemporary Share (%)" }
+              {
+                "field": "year",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "revenue_b",
+                "title": "Revenue ($B)",
+                "format": "$.2f"
+              },
+              {
+                "field": "attendance_m",
+                "title": "Attendances (M)",
+                "format": ".1f"
+              },
+              {
+                "field": "contemporary_share_pct",
+                "title": "Contemporary Share (%)"
+              }
             ]
           }
         },
         {
-          "mark": { "type": "point", "filled": true, "size": 65, "color": "#FFD166" },
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 65,
+            "color": "#FFD166"
+          },
           "encoding": {
-            "x": { "field": "year", "type": "quantitative", "scale": { "domain": { "param": "brush" } } },
-            "y": { "field": "revenue_b", "type": "quantitative" },
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": {
+                  "param": "brush"
+                }
+              }
+            },
+            "y": {
+              "field": "revenue_b",
+              "type": "quantitative"
+            },
             "tooltip": [
-              { "field": "year", "title": "Year", "format": "d" },
-              { "field": "revenue_b", "title": "Revenue ($B)", "format": "$.2f" }
+              {
+                "field": "year",
+                "title": "Year",
+                "format": "d"
+              },
+              {
+                "field": "revenue_b",
+                "title": "Revenue ($B)",
+                "format": "$.2f"
+              }
             ]
           }
         },
         {
-          "data": { "values": [{ "year": 2020, "revenue_b": 0.52, "lbl": "← COVID crash −77%" }] },
+          "data": {
+            "values": [
+              {
+                "year": 2020,
+                "revenue_b": 0.52,
+                "lbl": "\u2190 COVID crash \u221277%"
+              }
+            ]
+          },
           "mark": {
-            "type": "text", "align": "left", "dx": 8, "dy": -16,
-            "color": "#EF233C", "font": "Space Mono, monospace", "fontSize": 10, "fontStyle": "italic"
+            "type": "text",
+            "align": "left",
+            "dx": 8,
+            "dy": -16,
+            "color": "#EF233C",
+            "font": "Space Mono, monospace",
+            "fontSize": 10,
+            "fontStyle": "italic"
           },
           "encoding": {
-            "x": { "field": "year", "type": "quantitative", "scale": { "domain": { "param": "brush" } } },
-            "y": { "field": "revenue_b", "type": "quantitative" },
-            "text": { "field": "lbl" }
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": {
+                  "param": "brush"
+                }
+              }
+            },
+            "y": {
+              "field": "revenue_b",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "lbl"
+            }
           }
         },
         {
-          "data": { "values": [{ "year": 2024, "revenue_b": 3.41, "lbl": "All-time record $3.41B" }] },
+          "data": {
+            "values": [
+              {
+                "year": 2024,
+                "revenue_b": 3.41,
+                "lbl": "All-time record $3.41B"
+              }
+            ]
+          },
           "mark": {
-            "type": "text", "align": "right", "dx": -8, "dy": -16,
-            "color": "#06D6A0", "font": "Space Mono, monospace", "fontSize": 10, "fontStyle": "italic"
+            "type": "text",
+            "align": "right",
+            "dx": -8,
+            "dy": -16,
+            "color": "#06D6A0",
+            "font": "Space Mono, monospace",
+            "fontSize": 10,
+            "fontStyle": "italic"
           },
           "encoding": {
-            "x": { "field": "year", "type": "quantitative", "scale": { "domain": { "param": "brush" } } },
-            "y": { "field": "revenue_b", "type": "quantitative" },
-            "text": { "field": "lbl" }
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "scale": {
+                "domain": {
+                  "param": "brush"
+                }
+              }
+            },
+            "y": {
+              "field": "revenue_b",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "lbl"
+            }
           }
         }
       ]
     },
     {
       "height": 55,
-      "data": { "url": "data/lpa_annual.json" },
-      "params": [{ "name": "brush", "select": { "type": "interval", "encodings": ["x"] } }],
-      "mark": { "type": "area", "interpolate": "monotone", "color": "#FFD166", "opacity": 0.4 },
+      "data": {
+        "url": "../data/lpa_annual.json"
+      },
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          },
+          "value": [
+            2004,
+            2024
+          ]
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "color": "#FFD166",
+        "opacity": 0.4
+      },
       "encoding": {
         "x": {
-          "field": "year", "type": "quantitative",
-          "axis": { "format": "d", "title": "Drag here to zoom the chart above", "labelFontSize": 11 }
+          "field": "year",
+          "type": "quantitative",
+          "axis": {
+            "format": "d",
+            "title": "Drag here to zoom the chart above",
+            "labelFontSize": 11
+          }
         },
         "y": {
-          "field": "revenue_b", "type": "quantitative",
-          "axis": { "tickCount": 2, "grid": false, "title": null, "labelFontSize": 10 }
+          "field": "revenue_b",
+          "type": "quantitative",
+          "axis": {
+            "tickCount": 2,
+            "grid": false,
+            "title": null,
+            "labelFontSize": 10
+          }
         }
       }
     }
