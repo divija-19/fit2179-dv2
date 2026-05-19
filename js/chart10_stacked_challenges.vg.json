@@ -34,6 +34,7 @@
     },
     "x": {
       "field": "pct", "type": "quantitative",
+      "stack": true,
       "axis": { "title": "Percentage of festival organisers impacted (%)" },
       "scale": { "domain": [0, 90] }
     },
