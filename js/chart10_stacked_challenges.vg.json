@@ -3,30 +3,24 @@
   "description": "Stacked horizontal bar showing severe and major impact of challenges on festival organisers. Slider filters by minimum severe impact. Source: Creative Australia Soundcheck 2024.",
   "width": "container",
   "height": 310,
-  "config": {
-    "background": "transparent",
-    "view": { "stroke": "transparent" },
-    "axis": {
-      "domainColor": "#282822",
-      "gridColor": "#1e1e18",
-      "tickColor": "#282822",
-      "labelColor": "#7a7570",
-      "titleColor": "#7a7570",
-      "labelFont": "Trebuchet MS",
-      "titleFont": "Trebuchet MS",
-      "labelFontSize": 11,
-      "titleFontSize": 11
-    },
-    "legend": {
-      "labelColor": "#7a7570",
-      "titleColor": "#7a7570",
-      "labelFont": "Trebuchet MS",
-      "titleFont": "Trebuchet MS",
-      "labelFontSize": 12,
-      "titleFontSize": 11
-    }
+  "data": {
+    "values": [
+      { "challenge": "Rising operational costs", "severe_pct": 47, "major_pct": 31, "impact_type": "Severe impact", "pct": 47 },
+      { "challenge": "Rising operational costs", "severe_pct": 47, "major_pct": 31, "impact_type": "Major impact", "pct": 31 },
+      { "challenge": "Lack of funding & grants", "severe_pct": 39, "major_pct": 28, "impact_type": "Severe impact", "pct": 39 },
+      { "challenge": "Lack of funding & grants", "severe_pct": 39, "major_pct": 28, "impact_type": "Major impact", "pct": 28 },
+      { "challenge": "Insurance costs", "severe_pct": 31, "major_pct": 24, "impact_type": "Severe impact", "pct": 31 },
+      { "challenge": "Insurance costs", "severe_pct": 31, "major_pct": 24, "impact_type": "Major impact", "pct": 24 },
+      { "challenge": "Extreme weather events", "severe_pct": 22, "major_pct": 29, "impact_type": "Severe impact", "pct": 22 },
+      { "challenge": "Extreme weather events", "severe_pct": 22, "major_pct": 29, "impact_type": "Major impact", "pct": 29 },
+      { "challenge": "Late ticket buying", "severe_pct": 20, "major_pct": 35, "impact_type": "Severe impact", "pct": 20 },
+      { "challenge": "Late ticket buying", "severe_pct": 20, "major_pct": 35, "impact_type": "Major impact", "pct": 35 },
+      { "challenge": "Police & security costs", "severe_pct": 18, "major_pct": 26, "impact_type": "Severe impact", "pct": 18 },
+      { "challenge": "Police & security costs", "severe_pct": 18, "major_pct": 26, "impact_type": "Major impact", "pct": 26 },
+      { "challenge": "Council regulations", "severe_pct": 15, "major_pct": 30, "impact_type": "Severe impact", "pct": 15 },
+      { "challenge": "Council regulations", "severe_pct": 15, "major_pct": 30, "impact_type": "Major impact", "pct": 30 }
+    ]
   },
-  "data": { "url": "data/challenges_stacked.json" },
   "params": [
     {
       "name": "min_sev",
@@ -59,8 +53,8 @@
       "field": "pct",
       "type": "quantitative",
       "stack": null,
-      "axis": { "title": "Percentage of festival organisers impacted (%)" },
-      "scale": { "domain": [0, 50] }
+      "scale": { "domain": [0, 50] },
+      "axis": { "title": "Percentage of festival organisers impacted (%)" }
     },
     "color": {
       "field": "impact_type",
